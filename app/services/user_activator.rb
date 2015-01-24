@@ -23,13 +23,7 @@ class UserActivator
   end
 
   def factory
-    if SiteSetting.must_approve_users?
-      ApprovalActivator
-    elsif !user.active?
-      EmailActivator
-    else
-      LoginActivator
-    end
+    ApprovalActivator
   end
 
 end
